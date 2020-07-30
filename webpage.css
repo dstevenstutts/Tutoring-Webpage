@@ -32,7 +32,7 @@
     color:#111;
     line-height: 24px;
 }
-
+/*picture*/
 .img-me {
   width:100%;
 }
@@ -59,7 +59,8 @@
 
   .img-me {
     padding-top: 30px;
-    width: 100%;
+    padding-left: 200px;
+    width: 50%;
   }
 
 }
@@ -84,6 +85,8 @@
 
   .img-me {
     padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
     width: 45%;
     height: 30%;
     float: left;
