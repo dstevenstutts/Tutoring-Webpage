@@ -18,16 +18,17 @@ html {
 
 .page{
   display: grid;
-  grid-template-columns: 1fr 500px 500px 1fr;
-  grid-template-rows:1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows:0.5fr 1fr 0.5fr 0.5fr 0.5fr;
   grid-template-areas:
-  ". top-header top-header ."
-  ". profile-picture about-me ."
-  ". student-feedback student-feedback ."
-  ". footer footer .";
+  "top-header top-header"
+  "profile-picture profile-picture"
+  "student-feedback student-feedback"
+  "footer footer"
+  "about-me about-me";
 }
 
-/* Header */
+/* Mobile Header */
 
 .top-header{
   grid-column: 2/4;
@@ -48,30 +49,31 @@ html {
   text-align: center;
   font-size: 22px;
   color: #181818;
-  top: 120px;
+  top: 5px;
   width: 100%;
 }
 .top-header__title{
-  
+  text-align: center;
 }
 
 /* Profile Picture */
 
 .profile-picture{
-  grid-column: 2;
-  align-content: center;
+  grid-column: 2/4;
+  text-align: center;
 }
 
 /* About Me */
 
 .about-me{
 grid-column: 3/4;
+left: 0;
 font-size: 20px;
 display: grid;
-grid-template-rows: 0.9fr 3fr;
+grid-template-rows: 1fr 3fr;
+text-align: center;
 }
 .about-me__title{
-
 }
 .about-me__content{
 }
@@ -82,6 +84,7 @@ grid-template-rows: 0.9fr 3fr;
   grid-column: 2/4;
   justify-self: center;
   align-self: center;
+  text-align: center;
   font-size: 20px;
   display: grid;
   grid-template-rows: 1fr 3fr;
@@ -101,7 +104,7 @@ grid-template-rows: 0.9fr 3fr;
 .footer{
   grid-column: 1/5;
   justify-self: center;
-  align-self: start;
+  align-self: center;
   font-size: 20px;
   display: grid;
   grid-template-rows: 1fr 3fr;
@@ -113,4 +116,107 @@ grid-template-rows: 0.9fr 3fr;
 .footer__contact{
   justify-self: center;
   align-self: center;
+}
+
+@media screen and (min-width: 972px) {
+
+  .page{
+    display: grid;
+    grid-template-columns: 1fr 500px 500px 1fr;
+    grid-template-rows:1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    ". top-header top-header ."
+    ". profile-picture about-me ."
+    ". student-feedback student-feedback ."
+    ". footer footer .";
+  }
+
+  /* Header */
+
+  .top-header{
+    grid-column: 2/4;
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows: 1fr;
+  }
+  .top-header__picture{
+    grid-column: 1;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .textimage{
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 22px;
+    color: #181818;
+    top: 120px;
+    width: 100%;
+  }
+  .top-header__title{
+  }
+
+  /* Profile Picture */
+
+  .profile-picture{
+    grid-column: 2;
+    align-content: center;
+  }
+
+  /* About Me */
+
+  .about-me{
+  grid-column: 3/4;
+  left: 0;
+  text-align: left;
+  font-size: 20px;
+  display: grid;
+  grid-template-rows: 0.9fr 3fr;
+  }
+  .about-me__title{
+    text-align: center;
+  }
+  .about-me__content{
+  }
+
+  /* Student Feedback */
+
+  .student-feedback{
+    grid-column: 2/4;
+    justify-self: center;
+    align-self: center;
+    font-size: 20px;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+  }
+  .student-feedback__title{
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
+  }
+  .student-feedback__list{
+    grid-row: 2;
+    justify-self: center;
+  }
+
+  /* Contact */
+
+  .footer{
+    grid-column: 1/5;
+    justify-self: center;
+    align-self: start;
+    font-size: 20px;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+  }
+  .footer__title{
+    justify-self: center;
+
+  }
+  .footer__contact{
+    justify-self: center;
+    align-self: center;
+  }
 }
